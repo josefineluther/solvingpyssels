@@ -1,51 +1,58 @@
 'use client'
 
-import Link from 'next/link'
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from './ui/dropdown-menu'
 import { Plus } from 'lucide-react'
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from './ui/navigation-menu'
 
 export default function Navbar() {
     return (
-        <nav>
-            <ul className="flex flex-row justify-around p-4 mb-2">
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-                <div className="flex flex-row justify-end gap-6">
-                    <li>
-                        <DropdownMenu>
-                            <DropdownMenuTrigger>Projects</DropdownMenuTrigger>
-                            <DropdownMenuContent>
-                                <DropdownMenuLabel>Projects</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem>
-                                    <Link href="/project">All projects</Link>
-                                </DropdownMenuItem>
-
-                                <DropdownMenuItem>
-                                    <Link href="/myproject">My projects</Link>
-                                </DropdownMenuItem>
-                                <DropdownMenuSeparator />
-
-                                <DropdownMenuItem>
+        <div className="flex justify-center p-4">
+            <NavigationMenu>
+                <NavigationMenuList className="flex gap-8">
+                    <NavigationMenuItem>
+                        <NavigationMenuLink href="/myprofile">
+                            Home
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <div className="flex flex-col items-start gap-4 p-6">
+                                <NavigationMenuLink
+                                    href="/project"
+                                    className="w-full text-left"
+                                >
+                                    All projects
+                                </NavigationMenuLink>
+                                <NavigationMenuLink
+                                    href="/myproject"
+                                    className="w-full text-left"
+                                >
+                                    My projects
+                                </NavigationMenuLink>
+                                <NavigationMenuLink
+                                    href="/createproject"
+                                    className="w-full text-left"
+                                >
                                     <Plus />
-                                    <Link href="/createproject">Add new</Link>
-                                </DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </li>
-                    <li>
-                        <Link href="/myprofile">Profile</Link>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+                                    Add new
+                                </NavigationMenuLink>
+                            </div>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink href="/myprofile">
+                            Profile
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                </NavigationMenuList>
+            </NavigationMenu>
+        </div>
     )
 }
