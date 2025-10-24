@@ -52,8 +52,9 @@ export default function CreateProject() {
                             </SelectItem>
                             <SelectItem value="knitting">Knitting</SelectItem>
                             <SelectItem value="sewing">Sewing</SelectItem>
-                            <SelectItem value="art">Art</SelectItem>
-                            <SelectItem value="craft">Craft</SelectItem>
+                            <SelectItem value="painting">Painting</SelectItem>
+                            <SelectItem value="clay">Clay</SelectItem>
+                            <SelectItem value="sculpting">Sculpting</SelectItem>
                             <SelectItem value="jewelry">Jewelry</SelectItem>
                             <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
